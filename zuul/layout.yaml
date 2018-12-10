@@ -16,18 +16,18 @@ pipelines:
         # adds a comment to a review that says "myvendor: recheck".
         - event: comment-added
           comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*osnexus quantastor ci:\s*recheck\s*$
-    #success:
-    #  gerrit:
-    #    verified: 1
-    #failure:
-    #  gerrit:
-    #    #verified: -1
-    #merge-failure:
-    #  smtp:
-    #    #TODO: Update these to real e-mail addresses
-    #    to: osnexus-quantastor@msystechnologies.com
-    #    from: zuul@osnexus-quantastor-ci.com
-    #    subject: Upstream change {change} has a merge failure
+    success:
+      gerrit:
+        verified: 1
+    ailure:
+      gerrit:
+        #verified: -1
+    merge-failure:
+      smtp:
+        #TODO: Update these to real e-mail addresses
+        to: osnexus-quantastor@msystechnologies.com
+        from: zuul@osnexus-quantastor-ci.com
+        subject: Upstream change {change} has a merge failure
 
 
   - name: silent

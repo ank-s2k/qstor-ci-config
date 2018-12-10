@@ -7,6 +7,6 @@
     jobs:
         - noop-check-communication
         - dsvm-tempest-full:
-            node: 'devstack_slave || devstack-precise-check || d-p-c'
+            node: 'devstack_slave || devstack-precise-check || master'
         - dsvm-tempest-quantastor-driver:
-            node: 'd-p-c'
+            node: 'master'
