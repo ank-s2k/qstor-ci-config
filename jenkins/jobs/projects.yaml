@@ -2,7 +2,7 @@
     name: sandbox
     github-org: openstack-dev
     node: master
-    vendor: myvendor
+    vendor: osnexus
 
     jobs:
         - noop-check-communication

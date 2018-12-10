@@ -5,7 +5,7 @@ includes:
 pipelines:
   - name: check
     description: Newly uploaded patchsets enter this pipeline to receive an initial +/-1 Verified vote from Jenkins.
-    failure-message: "Build failed.  To recheck use 'myvendor: recheck'.  For 3rd party ci contact info: https://wiki.openstack.org/wiki/ThirdPartySystems"
+    failure-message: "Build failed.  To recheck use 'osnexus quantastor ci: recheck'.  For 3rd party ci contact info: https://wiki.openstack.org/wiki/ThirdPartySystems"
     manager: IndependentPipelineManager
     trigger:
       gerrit:
