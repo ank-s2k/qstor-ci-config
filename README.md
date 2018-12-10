@@ -1,7 +1,7 @@
-# Example project-config repository
+# Qstor project-config repository
 
-This is an example project-config repository for use as a
-starting point to setup a 3rd party CI account. It is expected that you
+This is a fork of project-config repository for use as a
+starting point to setup our 3rd party CI account. It is expected that you
 fork this repository or otherwise copy it to your own repository. Any
 changes to this version are expected to remain within the scope of an
 'example' to help others get started. Refer to

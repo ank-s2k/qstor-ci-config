@@ -15,18 +15,18 @@ pipelines:
         # recheck trigger that runs the check pipeline jobs when someone
         # adds a comment to a review that says "myvendor: recheck".
         - event: comment-added
-          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*myvendor:\s*recheck\s*$
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*qstor:\s*recheck\s*$
     success:
       gerrit:
-        verified: 1
+        #verified: 1
     failure:
       gerrit:
-        verified: -1
+        #verified: -1
     merge-failure:
       smtp:
         #TODO: Update these to real e-mail addresses
-        to: third_party_ci@example.com
-        from: zuul@example.com
+        to: osnexus-quantastor@msystechnologies.com
+        from: zuul@osnexus-quantastor-ci.com
         subject: Upstream change {change} has a merge failure
 
 
@@ -38,18 +38,18 @@ pipelines:
         - event: patchset-created
         - event: change-restored
         - event: comment-added
-          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*myvendor:\s*recheck\s*$
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*qstor:\s*recheck\s*$
     success:
       smtp:
         #TODO: Update these to real e-mail addresses
-        to: third_party_ci@example.com
-        from: zuul@example.com
+        to: osnexus-quantastor@msystechnologies.com
+        from: zuul@osnexus-quantastor-ci.com
         subject: 'Silent check of {change.project} {change.number},{change.patchset} passed'
     failure:
       smtp:
         #TODO: Update these to real e-mail addresses
-        to: third_party_ci@example.com
-        from: zuul@example.com
+        to: osnexus-quantastor@msystechnologies.com
+        from: zuul@osnexus-quantastor-ci.com
         subject: 'Silent check of {change.project} {change.number},{change.patchset} failed'
 
 

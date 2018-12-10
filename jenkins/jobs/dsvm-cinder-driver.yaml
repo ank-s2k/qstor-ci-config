@@ -18,31 +18,31 @@
           function pre_test_hook {{
               echo "Install thirdparty client libraries"
               #TODO: update your client here if needed, otherwise delete
-              sudo -H pip install mydriverclient
+              #sudo -H pip install mydriverclient
               echo "Configure the local.conf file to properly setup hp lefthand driver in cinder.conf"
               cat <<EOF >$BASE/new/devstack/local.conf
 
           [[post-config|\$CINDER_CONF]]
           [DEFAULT]
-          enabled_backends=mybackend
-          default_volume_type=myvolumetype
+          enabled_backends=qstor
+          default_volume_type=qstor
 
-          [mybackend]
+          [qstor]
           # add you driver configuration here
-          volume_driver=cinder.volume.drivers.MyDriver
-          volume_backend_name=mybackend
+          volume_driver=cinder.volume.drivers.QuantaStorDriver
+          volume_backend_name=qstor
 
           # Use post-extra because the tempest configuration file is
           # overwritten with the .sample after post-config.
           [[post-extra|\$TEMPEST_CONFIG]]
           [volume]
           storage_protocol=iSCSI
-          vendor_name=MyVendor
+          vendor_name=OSNEXUS
           EOF
 
               echo "Configure localrc file to properly setup CINDER_ENABLED_BACKENDS"
               cat <<EOF >>$BASE/new/devstack/localrc
-          CINDER_ENABLED_BACKENDS=mybackend:myvolumetype
+          CINDER_ENABLED_BACKENDS=qstor:qstor
           EOF
 
           }}
