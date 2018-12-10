@@ -1,5 +1,5 @@
 - job-template:
-    name: 'dsvm-tempest-my-quantastor-driver'
+    name: 'dsvm-tempest-quantastor-driver'
     node: '{node}'
 
     wrappers:

@@ -8,5 +8,5 @@
         - noop-check-communication
         - dsvm-tempest-full:
             node: 'devstack_slave || devstack-precise-check || d-p-c'
-        - dsvm-tempest-my-cinder-driver:
+        - dsvm-tempest-quantastor-driver:
             node: 'd-p-c'
